@@ -1,15 +1,15 @@
 <?php
 /**
- * @brief Related Entries, a plugin for Dotclear 2
+ * @brief works, a plugin for Dotclear 2
  *
- * @package    Dotclear
+ * @package Dotclear
  * @subpackage Plugins
  *
- * @author Philippe aka amalgame <philippe@dissitou.org>
+ * @author Gilles P. and contributors
  *
- * @copyright GPL-2.0 [https://www.gnu.org/licenses/gpl-2.0.html]
+ * @copyright Gilles P. gilles.p@je-mattarde.com
+ * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
-
 declare(strict_types=1);
 
 namespace Dotclear\Plugin\works;
