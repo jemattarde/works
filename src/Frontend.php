@@ -17,7 +17,7 @@ declare(strict_types=1);
 namespace Dotclear\Plugin\works;
 
 use dcCore;
-use dcNsProcess;
+use Dotclear\Core\Process;
 
 class Frontend extends Process
 {

@@ -18,7 +18,8 @@ namespace Dotclear\Plugin\works;
 
 use dcAdmin;
 use dcCore;
-use dcNsProcess;
+use Dotclear\Core\Backend\Utility;
+use Dotclear\Core\Process;
 
 class Backend extends Process
 {
@@ -37,13 +38,7 @@ class Backend extends Process
             return false;
         }
 
-     	 dcCore::app()->menu[dcAdmin::MENU_BLOG]->addItem(
-            __('works'),
-            My::makeUrl(),
-            My::icons(),
-            preg_match(My::urlScheme(), $_SERVER['REQUEST_URI']),
-            My::checkContext(My::MENU)
-        );
+        My::addBackendMenuItem(Utility::MENU_BLOG);
 
         /* Register favorite */
         dcCore::app()->addBehaviors([
