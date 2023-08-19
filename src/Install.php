@@ -1,9 +1,7 @@
 <?php
 /**
  * @brief works, a plugin for Dotclear 2
- * 
- * prepare le necessaire au fonctionnement du plugin en partie publique
- * 
+ *
  * @package Dotclear
  * @subpackage Plugins
  *
@@ -16,15 +14,13 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\works;
 
-use dcCore;
 use Dotclear\Core\Process;
 
-class Frontend extends Process
+class Install extends Process
 {
-    protected static $init = false; /** @deprecated since 2.27 */
     public static function init(): bool
     {
-        return self::status(My::checkContext(My::FRONTEND));
+        return self::status(My::checkContext(My::INSTALL));
     }
 
     public static function process(): bool
@@ -33,14 +29,8 @@ class Frontend extends Process
             return false;
         }
 
-        // Don't do things in frontend if plugin disabled
-        $settings = dcCore::app()->blog->settings->get(My::id());
-        if (!(bool) $settings->active) {
-            return false;
-        }
-
-        // ToDo
-
+        My::settings()->put('active', false, 'boolean', 'Enable plugin', false, true);
+        
         return true;
     }
 }
