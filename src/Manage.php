@@ -48,7 +48,7 @@ class Manage extends Process
             // ToDo
 
             Notices::addSuccessNotice(__('works'));
-            My::redirect();
+            //My::redirect();
         } catch (Exception $e) {
             dcCore::app()->error->add($e->getMessage());
         }
