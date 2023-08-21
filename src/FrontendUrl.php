@@ -20,6 +20,7 @@ use dcBlog;
 use dcCore;
 use dcPublic;
 use dcUrlHandlers;
+use Dotclear\Core\Frontend\Utility;
 use Dotclear\Helper\File\Path;
 
 
@@ -27,8 +28,8 @@ class FrontendUrl extends dcUrlHandlers
 {
 	public static function works()
     {
-	$default_template = Path::real(dcCore::app()->plugins->moduleInfo(My::id(), 'root')) . DIRECTORY_SEPARATOR . dcPublic::TPL_ROOT . DIRECTORY_SEPARATOR;
-    dcCore::app()->tpl->setPath(dcCore::app()->tpl->getPath(), $default_template . DC_DEFAULT_TPLSET);
+	$default_template = My::path() . DIRECTORY_SEPARATOR . dcPublic::TPL_ROOT . DIRECTORY_SEPARATOR;
+    dcCore::app()->tpl->setPath(dcCore::app()->tpl->getPath(), $default_template);
 	self::serveDocument('ma_page.html');
 		exit;
     }

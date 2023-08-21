@@ -29,6 +29,6 @@ $this->registerModule(
 
         'details'    => 'https://github.com/jemattarde/works',
         'support'    => 'https://github.com/jemattarde/works',
-        'repository' => 'https://github.com/jemattarde/works',
+        'repository' => 'https://github.com/jemattarde/works'
     ]
 );
