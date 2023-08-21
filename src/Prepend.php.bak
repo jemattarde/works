@@ -38,7 +38,7 @@ class Prepend extends Process
 	* param3 : expression reguliere de cette URL
 	* param4 : callback, nom de fcn a appeler lorsque cette URL est demandee
 	*/
-        dcCore::app()->url->register('works','works', '^works(?:/(.+))?$', [FrontendUrl::class, 'works']);
+        dcCore::app()->url->register('works','works', '^works/(.+)$', [FrontendUrl::class, 'works']);
 
         if (dcCore::app()->blog) {
             $settings = dcCore::app()->blog->settings->get(My::id());
